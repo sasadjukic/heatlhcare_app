@@ -1,0 +1,68 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="main-wrap">
+        <div class="wrapper">
+            <ul>
+                <li><h2>Dr. {{ current_user.name }} {{ current_user.last_name}}</h2></li>
+                <li><a href="{{ url_for ('logout') }}"><button class="btn">Logout</button></a></li>
+            </ul>
+        </div>
+        <p>------------------------------------</p>
+        <h2>Patient Schedule</h2>
+        {% if patients|length < 1 %}
+            <h3>You don't have any patients scheduled</h3>
+        {% else %}
+            <table class="schedule">
+                <tr>
+                    <th>Name</th>
+                    <th>Last Name</th>
+                    <th>Phone</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                {% for patient in patients %}
+                    <tr>
+                        <td>{{ patient.name }}</td>
+                        <td>{{ patient.last_name }}</td>
+                        <td>{{ patient.phone }}</td>
+                        <td>{{ patient.date }}</td>
+                        <td>{{ patient.time }}</td>
+                        <td><a href="/update/{{ patient.id }}"><button class="btn">Update</button></a></td>
+                        <td><a href="/delete/{{ patient.id }}" onclick="return confirm('Are your sure you want to delete {{ patient.name }} {{ patient.last_name }}?')">
+                                <button class="btn">Delete</button>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+        <p>------------------------------------</p>
+        <h2>ADD PATIENT</h2>
+        <div class="schedule-patients">
+            <form action="{{ url_for('dashboard') }}" method="POST">
+                <label>Name: </label>
+                <input type="text" name="p_name" required />
+                <br>
+                <label>Last Name: </label>
+                <input type="text" name="p_l_name" required />
+                <br>
+                <label>Telephone: </label>
+                <input type="text" name="p_telephone" required />
+                <br>
+                <label>Date: </label>
+                <input type="date" name="p_date" required />
+                <br>
+                <label>Time: </label>
+                <input type="time" name="p_time" required />
+                <br>
+                <div class="btn-pos">
+                    <input class="btn" type="submit" value="ADD" />
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

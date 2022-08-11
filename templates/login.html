@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="formular">
+        <form action="/login" method="POST">
+            <label class="emp-exempt">Employee Number:</label>
+            <input type="text" name="employee_no" value="employee number" required />
+            <br>
+            <div class="btn-pos">
+                <input class="btn" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+{% endblock %}

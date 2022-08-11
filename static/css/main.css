@@ -1,0 +1,115 @@
+
+body {
+    background-color: #30E3CA;
+}
+
+.btn {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #40514E;
+    background-color: #40514E;
+    color: white;
+    margin-top: 10px; 
+    padding: 5px 14px 5px 14px;
+}
+
+.btn-pos {
+    text-align: center;
+}
+
+.doctor {
+    margin-top: 20px;
+    text-align: center;
+    color: #001317;
+    font-family: "Prompt", sans-serif;
+}
+
+.emp-exempt {
+    display: inline-block;
+    width: 150px;
+    margin-right: 10px;
+    text-align: right;
+    color: #40514E;
+    font-family: "Prompt", sans-serif;
+}
+
+.formular, .logo, .schedule-patients, .schedule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2, h3, .sign-in, p{
+    text-align: center;
+    color: #001317;
+    font-family: "Prompt", sans-serif;
+}
+
+h3 {
+    color: #40514E;
+}
+
+input {
+    margin: 2.5px;
+    border: none;
+    border-radius: 2.5px;
+    color: #11999E;
+    padding: 5px;
+}
+
+label {
+    display: inline-block;
+    width: 90px;
+    margin-right: 10px;
+    text-align: right;
+    color: #40514E;
+    font-family: "Prompt", sans-serif;
+}
+
+.main-wrap {
+    min-width: 375px;
+    margin: auto;
+}
+
+.schedule tr td button {
+    margin-top: 0px;
+}
+
+.schedule-patients, .formular {
+    display: flex;
+    align-items: center;
+}
+
+td, th {
+    font-family: "Prompt", sans-serif;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+#with-us {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 0;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.wrapper ul {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    zoom: 1;
+}
+
+.wrapper li {
+    float: left;
+    padding: 2px 5px;
+}
+
+.wrapper li button {
+    margin-top: 25px;
+}

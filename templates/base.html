@@ -1,0 +1,24 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css') }}" />
+    <title>Unlimited Healthcare LLC.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet" />
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <h2>UNLIMITED HEATLHCARE</h2>
+    <!-- logo from www.subpng.com -->
+    <div class="logo">
+        <img src="{{ url_for ('static', filename='images/hermes-symbol.png') }}" width="300px" height="300px" alt="hermes-symbol" />
+    </div>
+    {% block body %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h2>{{ patient.name }} {{ patient.last_name}}</h2>
+    <h3>UPDATE PATIENT</h3>
+    <div class="schedule-patients">
+        <form action="/update/{{ patient.id }}" method="POST">
+            <label>Name: </label>
+            <input type="text" name="p_name" value="{{ patient.name }}" required />
+            <br>
+            <label>Last Name: </label>
+            <input type="text" name="p_l_name" value="{{ patient.last_name }}" required />
+            <br>
+            <label>Telephone: </label>
+            <input type="text" name="p_telephone" value="{{ patient.phone }}" required />
+            <br>
+            <label>Date: </label>
+            <input type="date" name="p_date" value="{{ patient.date }}" required />
+            <br>
+            <label>Time: </label>
+            <input type="time" name="p_time" value="{{ patient.time }}" required />
+            <br>
+            <div class="btn-pos">
+                <input class="btn" type="submit" value="Update" />
+                <a href="{{ url_for('dashboard') }}"><button class="btn">Cancel</button></a>
+            </div>
+            
+        </form>
+        
+    </div>
+{% endblock %}

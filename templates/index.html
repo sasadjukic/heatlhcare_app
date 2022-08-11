@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+    <h2> New Doctor? Sign up</h2>
+    <div class="formular">
+        <form action="{{ url_for ('confirm_registration') }}" method="POST">
+            <label>Name:</label>
+            <input type="text" name="name" required />
+            <br>
+            <label>Last name:</label>
+            <input type="text" name="last_name" required />
+            <br>
+            <div class="btn-pos">
+                <input class="btn" type="submit" value="Submit" />
+            </div>
+        </form>
+    </div>
+
+    <div class="doctor">
+        <h6 id="with-us">Already doctor with us?</h6>
+        <a class="ling-LG"href="{{ url_for ('login') }}">Login</a>
+    </div>
+{% endblock %}

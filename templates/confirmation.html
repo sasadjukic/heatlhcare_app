@@ -1,0 +1,11 @@
+
+{% extends 'base.html'%}
+
+{% block body%}
+    <h2>Congrats {{ name }} {{ l_name }}!!!</h2>
+    <h3>Your employee number is {{ employee_no }}</h3>
+    <h3>When you are ready, use your employee number to log in</h3>
+    <div class="btn-pos">
+        <a href="{{ url_for('login') }}"><button class="btn">Login</button></a>
+    </div> 
+{% endblock%}
