@@ -83,8 +83,8 @@ def login():
 
     return render_template('login.html')
 
-@login_required
 @app.route('/dashboard', methods=['GET', 'POST'])
+@login_required
 def dashboard():
 
     if request.method == 'POST':
@@ -114,8 +114,8 @@ def dashboard():
         return render_template('dashboard.html', doctor_name=current_user.name,
                                 doctor_last_name=current_user.last_name, patients = patients)
 
-@login_required
 @app.route('/delete/<int:id>')
+@login_required
 def delete_patient(id):
     patient_to_delete = Patients.query.get_or_404(id)
 
@@ -127,8 +127,8 @@ def delete_patient(id):
     except:
         return 'Error. Could not delete this patient'
 
-@login_required
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
+@login_required
 def update_patient(id):
     patient_to_update = Patients.query.get_or_404(id)
 
@@ -149,8 +149,8 @@ def update_patient(id):
     else:
         return render_template('update.html', patient=patient_to_update)
 
-@login_required
 @app.route('/logout')
+@login_required
 def logout():
     logout_user()
     return redirect(url_for('index'))
